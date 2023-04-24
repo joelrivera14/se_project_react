@@ -1,3 +1,6 @@
+import "../Blocks/Weather.css";
+import "../Blocks/card.css";
+
 const weatherOptions = [
   { url: require("../Images/day/sunny.svg").default, day: true, type: "sunny" },
   {
