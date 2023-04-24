@@ -3,6 +3,7 @@ import "../Blocks/App.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import ModalWithForm from "./ModalWithForm";
 
 function App() {
   const weatherTemp = "45° F";
@@ -11,8 +12,7 @@ function App() {
       <Header />
       <Main weatherTemp={weatherTemp} />
       <Footer />
-      <div className="modalWithForm"></div>
-      <div className="itemModal"></div>
+      <ModalWithForm title="new garment">these are children</ModalWithForm>
     </div>
   );
 }
