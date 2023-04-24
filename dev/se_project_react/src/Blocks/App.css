@@ -1,38 +1,41 @@
-.header {
+.weather__main {
+  padding: 28px 40px 0 40px;
+}
+
+.weather {
+  position: relative;
+}
+
+.weather__temp {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  color: #ffffff;
+  font-size: 36px;
+}
+
+.weather__image {
+  width: 100%;
+}
+
+.card_section {
+  margin: 40px 0 0 0;
+}
+
+.card_items {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  height: 69px;
-  background-color: aqua;
+  flex-wrap: wrap;
+  gap: 20px 17px;
+  justify-content: center;
+  margin: 34px 0 0 0;
 }
 
-.header__logo-container {
-  display: flex;
-  gap: 24px;
+.card_name {
+  text-align: center;
 }
 
-.header__logo {
-  padding: 32px 0 0 0;
-}
-
-.header__date {
-  padding: 43px 0 0 0;
-}
-
-.header__avatar-logo-container {
-  display: flex;
-}
-
-.header__button {
-  padding: 40px 20px 0 0;
-}
-
-.header__name {
-  padding: 40px 12px 0 0;
-}
-
-.header__avatar {
-  padding: 32px 0 0 0;
+.card_image {
+  height: 328px;
+  width: 328px;
+  border-radius: 10px;
 }
