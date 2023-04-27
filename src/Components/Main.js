@@ -1,4 +1,4 @@
-import { defaultClothingItems } from "./utils";
+import { defaultClothingItems } from "../utils/utils";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
 import { useMemo } from "react";

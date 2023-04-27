@@ -1,4 +1,4 @@
-import "../Blocks/Header.css";
+import "../blocks/Header.css";
 
 const Header = ({ onCreateModal }) => {
   console.log("Header");
@@ -7,7 +7,7 @@ const Header = ({ onCreateModal }) => {
       <div className="header__logo-container">
         <div className="header__logo">
           <img
-            src={require("../Images/wtwrlogo.svg").default}
+            src={require("../images/wtwrlogo.svg").default}
             alt="wtwr logo"
           />
         </div>
@@ -26,7 +26,7 @@ const Header = ({ onCreateModal }) => {
         </div>
         <div className="header__name">Terrence Tegegne</div>
         <div className="header__avatar">
-          <img src={require("../Images/avatar.svg").default} alt="avatar" />
+          <img src={require("../images/avatar.svg").default} alt="avatar" />
         </div>
       </div>
     </header>

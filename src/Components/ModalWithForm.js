@@ -1,4 +1,4 @@
-import "../Blocks/ModalWithForm.css";
+import "../blocks/ModalWithForm.css";
 
 const ModalWithForm = ({
   children,
@@ -12,12 +12,12 @@ const ModalWithForm = ({
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
         <button type="button" onClick={onClose} className="modal__close-button">
-          <img src={require("../Images/closeButton.svg").default} />
+          <img src={require("../images/closeButton.svg").default} />
         </button>
         <h3 className="modal__title">{title}</h3>
         <form>{children}</form>
         <button className="modal__button-submit" type="submit">
-          <img src={require("../Images/addgarmentdisabled.svg").default} />
+          <img src={require("../images/addgarmentdisabled.svg").default} />
         </button>
       </div>
     </div>

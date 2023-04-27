@@ -1,52 +1,52 @@
-import "../Blocks/Weather.css";
-import "../Blocks/card.css";
+import "../blocks/Weather.css";
+import "../blocks/card.css";
 
 const weatherOptions = [
-  { url: require("../Images/day/sunny.svg").default, day: true, type: "sunny" },
+  { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
   {
-    url: require("../Images/day/cloudy.svg").default,
+    url: require("../images/day/cloudy.svg").default,
     day: true,
     type: "cloudy",
   },
-  { url: require("../Images/day/foggy.svg").default, day: true, type: "foggy" },
+  { url: require("../images/day/foggy.svg").default, day: true, type: "foggy" },
   {
-    url: require("../Images/day/rainy.svg").default,
+    url: require("../images/day/rainy.svg").default,
     day: true,
     type: "rainy",
   },
-  { url: require("../Images/day/snowy.svg").default, day: true, type: "snowy" },
+  { url: require("../images/day/snowy.svg").default, day: true, type: "snowy" },
   {
-    url: require("../Images/day/stormy.svg").default,
+    url: require("../images/day/stormy.svg").default,
     day: true,
     type: "stormy",
   },
   {
-    url: require("../Images/night/moon.svg").default,
+    url: require("../images/night/moon.svg").default,
     day: false,
     type: "moon",
   },
   {
-    url: require("../Images/night/nightcloudy.svg").default,
+    url: require("../images/night/nightcloudy.svg").default,
     day: false,
     type: "nightcloudy",
   },
   {
-    url: require("../Images/night/nightfoggy.svg").default,
+    url: require("../images/night/nightfoggy.svg").default,
     day: false,
     type: "nightfoggy",
   },
   {
-    url: require("../Images/night/nightrainy.svg").default,
+    url: require("../images/night/nightrainy.svg").default,
     day: false,
     type: "nightrainy",
   },
   {
-    url: require("../Images/night/nightsnowy.svg").default,
+    url: require("../images/night/nightsnowy.svg").default,
     day: false,
     type: "nightsnowy",
   },
   {
-    url: require("../Images/night/nightstormy.svg").default,
+    url: require("../images/night/nightstormy.svg").default,
     day: false,
     type: "nightstormy",
   },
