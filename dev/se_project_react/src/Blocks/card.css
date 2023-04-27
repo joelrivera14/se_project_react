@@ -1,5 +1,9 @@
 .card_section {
   margin: 40px 0 0 0;
+  font-family: "FamiljenGrotesk-Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .card_items {
@@ -12,10 +16,24 @@
 
 .card_name {
   text-align: center;
+  position: relative;
+  top: 58px;
+  background-color: #ffffff;
+  max-width: 200px;
+  border-radius: 5px;
+  padding: 2px 12px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .card_image {
   height: 328px;
   width: 328px;
   border-radius: 10px;
+  border: 0.1px solid black;
+}
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
 }

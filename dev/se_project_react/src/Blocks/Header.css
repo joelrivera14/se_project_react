@@ -5,6 +5,10 @@
   align-items: center;
   padding: 0 40px;
   height: 69px;
+  font-family: "FamiljenGrotesk-Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .header__logo-container {
@@ -24,8 +28,18 @@
   display: flex;
 }
 
-.header__button {
+.header__button-holder {
   padding: 40px 20px 0 0;
+}
+
+.header__button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: "FamiljenGrotesk-Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .header__name {

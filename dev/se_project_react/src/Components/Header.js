@@ -15,12 +15,16 @@ const Header = ({ onCreateModal }) => {
       </div>
 
       <div className="header__avatar-logo-container">
-        <div className="header__button">
-          <button type="text" onClick={onCreateModal}>
+        <div className="header__button-holder">
+          <button
+            className="header__button"
+            type="text"
+            onClick={onCreateModal}
+          >
             + Add clothes
           </button>
         </div>
-        <div className="header__name">name</div>
+        <div className="header__name">Terrence Tegegne</div>
         <div className="header__avatar">
           <img src={require("../Images/avatar.svg").default} alt="avatar" />
         </div>

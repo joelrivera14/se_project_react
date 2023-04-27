@@ -17,7 +17,7 @@ const ModalWithForm = ({
         <h3 className="modal__title">{title}</h3>
         <form>{children}</form>
         <button className="modal__button-submit" type="submit">
-          {buttonText}
+          <img src={require("../Images/addgarmentdisabled.svg").default} />
         </button>
       </div>
     </div>
