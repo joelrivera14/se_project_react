@@ -1,11 +1,17 @@
+import closeButton from "../images/closeButton.svg";
+
 const ItemModal = ({ selectedCard, onClose }) => {
   return (
     <div className={`modal`}>
       <div className="modal__content modal__content_preview">
         <button type="button" onClick={onClose} className="modal__close-button">
-          <img src={require("../images/closeButton.svg").default} />
+          <img src={closeButton} alt="close button" />
         </button>
-        <img src={selectedCard.link} className="modal__image-preview" />
+        <img
+          src={selectedCard.link}
+          alt="preview"
+          className="modal__image-preview"
+        />
         <div className="modal__preview-text">
           <div>{selectedCard.name}</div>
           <div>Weather type: {selectedCard.weather}</div>
