@@ -30,7 +30,7 @@ function Main({ weatherTemp, onSelectCard }) {
               onSelectCard={onSelectCard}
               name={item.name}
               weather={item.weather}
-              id={item.id}
+              _id={item._id}
               link={item.link}
             />
           ))}
