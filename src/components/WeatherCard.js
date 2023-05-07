@@ -1,5 +1,7 @@
 import "../blocks/Weather.css";
 import "../blocks/card.css";
+import CurrentTempUnitContext from "../utils/CurrentTempUnitContext";
+import React, { useContext } from "react";
 
 const weatherOptions = [
   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
@@ -53,6 +55,7 @@ const weatherOptions = [
 ];
 
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
+  const { currentTempUnit } = useContext(CurrentTempUnitContext);
   const imageSrc = weatherOptions.filter((i) => {
     return i.day === day && i.type === type;
   });
@@ -61,7 +64,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   return (
     <>
       <section className="weather" id="weather">
-        <div className="weather__temp">{weatherTemp}</div>
+        <div className="weather__temp">{weatherTemp[currentTempUnit]}</div>
         <div>
           <img src={imageSrcUrl} className="weather__image" />
         </div>

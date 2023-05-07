@@ -1,6 +1,7 @@
 import "../blocks/Header.css";
 import logo from "../images/wtwrlogo.svg";
 import avatar from "../images/avatar.svg";
+import ToggleSwitch from "./ToggleSwitch";
 
 const Header = ({ onCreateModal }) => {
   console.log("Header");
@@ -14,6 +15,7 @@ const Header = ({ onCreateModal }) => {
       </div>
 
       <div className="header__avatar-logo-container">
+        <ToggleSwitch />
         <div className="header__button-holder">
           <button
             className="header__button"
