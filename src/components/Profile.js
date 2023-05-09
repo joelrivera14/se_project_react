@@ -1,4 +1,5 @@
 import SideBar from "./SideBar";
+import "../blocks/Profile.css";
 
 export function Profile() {
   return (
