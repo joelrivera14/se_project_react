@@ -5,6 +5,7 @@ import { Profile } from "./Profile";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
+import { defaultClothingItems } from "../utils/utils";
 import { useEffect, useState } from "react";
 import {
   getForecastWeather,
@@ -61,7 +62,7 @@ function App() {
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile items={defaultClothingItems} />
           </Route>
           <Footer />
           {activeModal === "create" && (

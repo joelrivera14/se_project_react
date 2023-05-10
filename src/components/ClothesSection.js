@@ -1,3 +1,5 @@
+import "../blocks/Clothes.css";
+
 export default function ClothesSection() {
   return (
     <div className="clothes">
