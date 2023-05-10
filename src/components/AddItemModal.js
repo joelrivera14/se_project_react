@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 
-export default function AddItemModal({ handleCloseModal, isOpen, onAddItem }) {
+export default function AddItemModal({ onClose, isOpen, onAddItem }) {
   const [nameInput, setNameInput] = useState("");
   const [linkInput, setLinkInput] = useState("");
   const [weatherType, setWeatherType] = useState("");
@@ -12,7 +12,7 @@ export default function AddItemModal({ handleCloseModal, isOpen, onAddItem }) {
   }
 
   return (
-    <ModalWithForm title="New garment" onClose={handleCloseModal}>
+    <ModalWithForm title="New garment" onClick={onClose}>
       <div className="modal__labels">
         <label className="modal__label">
           Name
