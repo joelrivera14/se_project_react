@@ -1,5 +1,4 @@
 .sidebar {
-  background-color: pink;
   display: flex;
   flex-flow: row;
   align-self: flex-start;

@@ -14,6 +14,7 @@ import {
 } from "../utils/WeatherApi";
 import CurrentTempUnitContext from "../utils/CurrentTempUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
+import AddItemModal from "./AddItemModal";
 
 function App() {
   // const weatherTemp = "45° F";
@@ -49,6 +50,10 @@ function App() {
     setCurrentTempUnit((currentTempState) => {
       return currentTempState === "C" ? "F" : "C";
     });
+  };
+
+  const handleAddItem = () => {
+    setActiveModal("addItem");
   };
 
   return (
@@ -125,6 +130,13 @@ function App() {
           )}
           {activeModal === "preview" && (
             <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+          )}
+          {activeModal === "addItem" && (
+            <AddItemModal
+              onClose={handleCloseModal}
+              isOpen={handleCreateModal}
+              onAddItem={handleAddItem}
+            />
           )}
         </CurrentTempUnitContext.Provider>
       </BrowserRouter>
