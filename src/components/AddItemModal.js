@@ -12,12 +12,7 @@ export default function AddItemModal({ handleCloseModal, isOpen, onAddItem }) {
   }
 
   return (
-    <ModalWithForm
-      title="New garment"
-      onClose={handleCloseModal}
-      isOpen={isOpen}
-      onAddItem={onAddItem}
-    >
+    <ModalWithForm title="New garment" onClose={handleCloseModal}>
       <div className="modal__labels">
         <label className="modal__label">
           Name

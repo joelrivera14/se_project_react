@@ -70,68 +70,10 @@ function App() {
             <Profile items={defaultClothingItems} />
           </Route>
           <Footer />
-          {activeModal === "create" && (
-            <ModalWithForm title="New garment" onClose={handleCloseModal}>
-              <div className="modal__labels">
-                <label className="modal__label">
-                  Name
-                  <input
-                    className="modal__input"
-                    type="text"
-                    name="name"
-                    minLength="1"
-                    maxLength="30"
-                    placeholder="Name"
-                  />
-                </label>
-                <label className="modal__label">
-                  Image
-                  <input
-                    className="modal__input"
-                    type="url"
-                    name="link"
-                    minLength="1"
-                    maxLength="30"
-                    placeholder="Image Url"
-                  />
-                </label>
-              </div>
-              <p className="modal__paragraph">Select the weather type:</p>
-              <div className="modal__radios">
-                <div className="modal__radio">
-                  <input
-                    className="modal__input-radio"
-                    type="radio"
-                    id="hot"
-                    value="hot"
-                  />
-                  <label>Hot</label>
-                </div>
-                <div className="modal__radio">
-                  <input
-                    className="modal__input-radio"
-                    type="radio"
-                    id="warm"
-                    value="warm"
-                  />
-                  <label>Warm</label>
-                </div>
-                <div className="modal__radio">
-                  <input
-                    className="modal__input-radio"
-                    type="radio"
-                    id="cold"
-                    value="cold"
-                  />
-                  <label>Cold</label>
-                </div>
-              </div>
-            </ModalWithForm>
-          )}
           {activeModal === "preview" && (
             <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
           )}
-          {activeModal === "addItem" && (
+          {activeModal === "create" && (
             <AddItemModal
               onClose={handleCloseModal}
               isOpen={handleCreateModal}
