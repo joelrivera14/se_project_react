@@ -17,11 +17,11 @@ import { BrowserRouter, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
 
 function App() {
-  // const weatherTemp = "45° F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -52,8 +52,10 @@ function App() {
     });
   };
 
-  const handleAddItem = () => {
-    setActiveModal("addItem");
+  const handleAddItemSubmit = () => {
+    //get item
+    setClothingItems([item, ...clothingItems]);
+    //create array
   };
 
   return (
