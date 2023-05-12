@@ -59,7 +59,7 @@ function App() {
       .then((res) => {
         console.log(res);
         setClothingItems([res, ...clothingItems]);
-        //close the modal
+        handleCloseModal();
       })
       .catch((error) => {
         console.log(error);
