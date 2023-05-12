@@ -15,6 +15,7 @@ import {
 import CurrentTempUnitContext from "../utils/CurrentTempUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
+import * as api from "../utils/Api";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -52,9 +53,18 @@ function App() {
     });
   };
 
-  const handleAddItemSubmit = () => {
-    //get item
-    setClothingItems([item, ...clothingItems]);
+  const handleAddItem = (name, url, weatherType) => {
+    api
+      .addItems(name, url, weatherType)
+      .then((res) => {
+        console.log(res);
+        setClothingItems([res, ...clothingItems]);
+        //close the modal
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     //create array
   };
 
