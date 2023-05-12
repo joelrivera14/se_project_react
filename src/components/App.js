@@ -64,8 +64,6 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-
-    //create array
   };
 
   return (
