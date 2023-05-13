@@ -27,6 +27,10 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             minLength="1"
             maxLength="3000"
             placeholder="Name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
         </label>
         <label className="modal__label">
@@ -37,6 +41,10 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
+            value={link}
+            onChange={(e) => {
+              setLink(e.target.value);
+            }}
           />
         </label>
       </div>
