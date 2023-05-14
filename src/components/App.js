@@ -55,7 +55,11 @@ function App() {
 
   const handleAddItem = ({ name, link, weatherType }) => {
     api
-      .addItems({ name, imageUrl: link, weather: weatherType })
+      .addItems({
+        name,
+        link,
+        weather: weatherType,
+      })
       .then((res) => {
         console.log(res);
         setClothingItems([res, ...clothingItems]);

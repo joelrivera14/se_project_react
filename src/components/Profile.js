@@ -5,6 +5,7 @@ import "../blocks/Profile.css";
 import "../blocks/cards.css";
 
 export function Profile({ items }) {
+  console.log(items);
   return (
     <div className="profile">
       <div className="profile__sidebar">
@@ -16,7 +17,7 @@ export function Profile({ items }) {
           <ul className="cards__list">
             {items.map((card) => (
               <ItemCard
-                key={card._id}
+                key={card.id}
                 item={card}
                 onSelectCard={card.onSelectCard}
                 name={card.name}
