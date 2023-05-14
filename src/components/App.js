@@ -53,9 +53,9 @@ function App() {
     });
   };
 
-  const handleAddItem = (name, url, weatherType) => {
+  const handleAddItem = ({ name, link, weatherType }) => {
     api
-      .addItems(name, url, weatherType)
+      .addItems({ name, imageUrl: link, weather: weatherType })
       .then((res) => {
         console.log(res);
         setClothingItems([res, ...clothingItems]);
@@ -65,7 +65,7 @@ function App() {
         console.log(error);
       });
   };
-
+  console.log(clothingItems);
   return (
     <div>
       <BrowserRouter>
@@ -77,7 +77,10 @@ function App() {
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile items={defaultClothingItems} />
+            <Profile
+              items={[...clothingItems, ...defaultClothingItems]}
+              onSelectCard={handleSelectedCard}
+            />
           </Route>
           <Footer />
           {activeModal === "preview" && (

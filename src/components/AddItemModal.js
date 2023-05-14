@@ -8,7 +8,17 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(name, link, weatherType);
     onAddItem({ name, link, weatherType });
+  }
+
+  function handleWeatherType(e) {
+    console.log(e.target.value);
+    setWeatherType(e.target.value);
+  }
+
+  function handleLink(e) {
+    setLink(e.target.value);
   }
 
   return (
@@ -41,10 +51,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
-            value={link}
-            onChange={(e) => {
-              setLink(e.target.value);
-            }}
+            onChange={handleLink}
           />
         </label>
       </div>
@@ -56,6 +63,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="hot"
             value="hot"
+            onChange={handleWeatherType}
           />
           <label>Hot</label>
         </div>
@@ -65,6 +73,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="warm"
             value="warm"
+            onChange={handleWeatherType}
           />
           <label>Warm</label>
         </div>
@@ -74,6 +83,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             type="radio"
             id="cold"
             value="cold"
+            onChange={handleWeatherType}
           />
           <label>Cold</label>
         </div>

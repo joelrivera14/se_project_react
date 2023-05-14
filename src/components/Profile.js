@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
 import "../blocks/cards.css";
 
-export function Profile({ items, onSelectCard }) {
+export function Profile({ items }) {
   return (
     <div className="profile">
       <div className="profile__sidebar">
@@ -18,7 +18,7 @@ export function Profile({ items, onSelectCard }) {
               <ItemCard
                 key={card._id}
                 item={card}
-                onSelectCard={onSelectCard}
+                onSelectCard={card.onSelectCard}
                 name={card.name}
                 weather={card.weather}
                 id={card.id}
