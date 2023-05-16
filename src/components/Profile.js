@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
 import "../blocks/cards.css";
 
-export function Profile({ items }) {
+export function Profile({ items, onSelectCard }) {
   console.log(items);
   return (
     <div className="profile">
@@ -19,7 +19,7 @@ export function Profile({ items }) {
               <ItemCard
                 key={card.id}
                 item={card}
-                onSelectCard={card.onSelectCard}
+                onSelectCard={onSelectCard}
                 name={card.name}
                 weather={card.weather}
                 id={card.id}

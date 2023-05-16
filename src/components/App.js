@@ -22,7 +22,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -69,7 +69,18 @@ function App() {
         console.log(error);
       });
   };
-  console.log(clothingItems);
+
+  const handleDeleteItem = (item) => {
+    api.deleteItems(item).then(() => {
+      setClothingItems((cards) => {
+        cards.filter((card) => {
+          card.id !== item.id;
+        });
+        handleCloseModal();
+      });
+    });
+  };
+
   return (
     <div>
       <BrowserRouter>
@@ -78,17 +89,22 @@ function App() {
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
           </Route>
           <Route path="/profile">
-            <Profile
-              items={[...clothingItems, ...defaultClothingItems]}
-              onSelectCard={handleSelectedCard}
-            />
+            <Profile items={clothingItems} onSelectCard={handleSelectedCard} />
           </Route>
           <Footer />
           {activeModal === "preview" && (
-            <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+            <ItemModal
+              selectedCard={selectedCard}
+              onClose={handleCloseModal}
+              delete={handleDeleteItem}
+            />
           )}
           {activeModal === "create" && (
             <AddItemModal
