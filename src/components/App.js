@@ -72,12 +72,13 @@ function App() {
 
   const handleDeleteItem = (item) => {
     api.deleteItems(item).then(() => {
-      setClothingItems((cards) => {
+      setClothingItems();
+      const deleteClothesItems = (cards) => {
         cards.filter((card) => {
           card.id !== item.id;
         });
-        handleCloseModal();
-      });
+      };
+      handleCloseModal();
     });
   };
 
