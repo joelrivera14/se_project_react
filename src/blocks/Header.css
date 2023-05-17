@@ -26,10 +26,12 @@
 
 .header__avatar-logo-container {
   display: flex;
+  align-items: center;
+  margin: 40px 0 0 0;
 }
 
 .header__button-holder {
-  padding: 40px 20px 0 0;
+  padding: 0px 20px 0 20px;
 }
 
 .header__button {
@@ -43,11 +45,11 @@
 }
 
 .header__name {
-  padding: 40px 12px 0 0;
+  padding: 0px 12px 0 0;
 }
 
 .header__avatar {
-  padding: 32px 0 0 0;
+  padding: 6px 0 0 0;
 }
 
 .header__link {

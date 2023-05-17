@@ -71,13 +71,13 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
-    api.deleteItems(item).then(() => {
-      setClothingItems();
-      const deleteClothesItems = (cards) => {
-        cards.filter((card) => {
-          card.id !== item.id;
-        });
-      };
+    console.log(item);
+    api.deleteItems(item._id).then(() => {
+      const filteredCards = clothingItems.filter(
+        (card) => card._id !== item._id
+      );
+      console.log(filteredCards);
+      setClothingItems(filteredCards);
       handleCloseModal();
     });
   };
@@ -104,7 +104,7 @@ function App() {
             <ItemModal
               selectedCard={selectedCard}
               onClose={handleCloseModal}
-              delete={handleDeleteItem}
+              onDelete={handleDeleteItem}
             />
           )}
           {activeModal === "create" && (
