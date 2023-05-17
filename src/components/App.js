@@ -11,7 +11,7 @@ import {
   getForecastWeather,
   parseWeatherData,
   temperature,
-} from "../utils/WeatherApi";
+} from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
@@ -55,7 +55,7 @@ function App() {
 
   const handleAddItem = ({ name, link, weatherType }) => {
     api
-      .addItems({
+      .addItem({
         name,
         link,
         weather: weatherType,
@@ -72,14 +72,19 @@ function App() {
 
   const handleDeleteItem = (item) => {
     console.log(item);
-    api.deleteItems(item._id).then(() => {
-      const filteredCards = clothingItems.filter(
-        (card) => card._id !== item._id
-      );
-      console.log(filteredCards);
-      setClothingItems(filteredCards);
-      handleCloseModal();
-    });
+    api
+      .deleteItem(item._id)
+      .then(() => {
+        const filteredCards = clothingItems.filter(
+          (card) => card._id !== item._id
+        );
+        console.log(filteredCards);
+        setClothingItems(filteredCards);
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
