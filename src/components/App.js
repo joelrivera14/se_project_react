@@ -85,7 +85,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <CurrentTempUnitContext.Provider
+        <CurrentTemperatureUnitContext.Provider
           value={{ currentTempUnit, handleToggleSwitchChange }}
         >
           <Header onCreateModal={handleCreateModal} />
@@ -114,7 +114,7 @@ function App() {
               onAddItem={handleAddItem}
             />
           )}
-        </CurrentTempUnitContext.Provider>
+        </CurrentTemperatureUnitContext.Provider>
       </BrowserRouter>
     </div>
   );
