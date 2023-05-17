@@ -21,7 +21,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCreateModal = () => {
@@ -48,7 +48,7 @@ function App() {
   }, []);
 
   const handleToggleSwitchChange = () => {
-    setCurrentTempUnit((currentTempState) => {
+    setCurrentTemperatureUnit((currentTempState) => {
       return currentTempState === "C" ? "F" : "C";
     });
   };
@@ -86,7 +86,7 @@ function App() {
     <div>
       <BrowserRouter>
         <CurrentTemperatureUnitContext.Provider
-          value={{ currentTempUnit, handleToggleSwitchChange }}
+          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">

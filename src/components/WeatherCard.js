@@ -1,6 +1,6 @@
 import "../blocks/Weather.css";
 import "../blocks/card.css";
-import CurrentTempUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import React, { useContext } from "react";
 import { temperature } from "../utils/WeatherApi";
 
@@ -56,14 +56,14 @@ const weatherOptions = [
 ];
 
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
-  const { currentTempUnit } = useContext(CurrentTempUnitContext);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const imageSrc = weatherOptions.filter((i) => {
     return i.day === day && i.type === type;
   });
-  console.log(day, type, weatherTemp, currentTempUnit);
+  console.log(day, type, weatherTemp, currentTemperatureUnit);
   const currentTemp = temperature(weatherTemp);
   console.log(currentTemp);
-  const currentTempString = currentTemp[currentTempUnit];
+  const currentTempString = currentTemp[currentTemperatureUnit];
 
   const imageSrcUrl = imageSrc[0].url || "";
   return (
