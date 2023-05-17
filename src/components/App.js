@@ -12,7 +12,7 @@ import {
   parseWeatherData,
   temperature,
 } from "../utils/WeatherApi";
-import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import CurrentTempUnitContext from "./CurrentTempUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
 import * as api from "../utils/Api";
