@@ -1,1 +1,1 @@
-This is the 11th project from Practicum where we set up a mock server to add and delete cards rendered within the website. The project was created with react and uses routes to navigate from page to page.
+This is REACT, the 11th project from Practicum where we set up a mock server to add and delete cards rendered within the website. The project was created with react and uses JSX as well as routes to navigate from page to page.
