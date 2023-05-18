@@ -26,7 +26,6 @@ export const weatherOptions = [
     url: require("../images/night/nightcloudy.svg").default,
     day: false,
     type: "nightcloudy",
-    s,
   },
   {
     url: require("../images/night/nightfoggy.svg").default,
