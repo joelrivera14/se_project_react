@@ -1,4 +1,5 @@
-import { baseUrl, checkResponse } from "./Constants";
+import { baseUrl } from "./constants";
+import { checkResponse } from "./utils";
 
 export const getItems = () => {
   return fetch(`${baseUrl}/items`, {

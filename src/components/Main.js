@@ -1,7 +1,6 @@
-import { defaultClothingItems } from "../utils/utils";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
-import { useMemo, useContext } from "react";
+import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { temperature } from "../utils/weatherApi";
 
@@ -33,15 +32,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
         Today is {currentTempString} / You may want to wear:
         <div className="card_items">
           {filteredCards.map((item) => (
-            <ItemCard
-              key={item._id}
-              item={item}
-              onSelectCard={onSelectCard}
-              name={item.name}
-              weather={item.weather}
-              id={item.id}
-              link={item.link}
-            />
+            <ItemCard key={item.id} item={item} onSelectCard={onSelectCard} />
           ))}
         </div>
       </section>

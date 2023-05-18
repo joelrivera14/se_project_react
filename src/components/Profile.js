@@ -16,15 +16,7 @@ export function Profile({ items, onSelectCard }) {
         <section className="cards">
           <ul className="cards__list">
             {items.map((card) => (
-              <ItemCard
-                key={card.id}
-                item={card}
-                onSelectCard={onSelectCard}
-                name={card.name}
-                weather={card.weather}
-                id={card.id}
-                link={card.link}
-              />
+              <ItemCard key={card.id} item={card} onSelectCard={onSelectCard} />
             ))}
           </ul>
         </section>

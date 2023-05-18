@@ -3,16 +3,16 @@ import "../blocks/ItemCard.css";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import React, { useContext } from "react";
 import { temperature } from "../utils/weatherApi";
-import { weatherOptions } from "../utils/Constants";
+import { weatherOptions } from "../utils/constants";
 
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  const weather = (item) => {
+  const checkWeatherOption = (item) => {
     return item.day === day && item.type === type;
   };
 
-  const weatherOption = weatherOptions.find(weather);
+  const weatherOption = weatherOptions.find(checkWeatherOption);
 
   const currentTemp = temperature(weatherTemp);
   console.log(currentTemp);

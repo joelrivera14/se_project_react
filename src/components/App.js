@@ -5,7 +5,7 @@ import { Profile } from "./Profile";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
-import { defaultClothingItems } from "../utils/utils";
+import { defaultClothingItems } from "../utils/constants";
 import { useEffect, useState } from "react";
 import {
   getForecastWeather,
@@ -15,7 +15,7 @@ import {
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
-import * as api from "../utils/Api";
+import * as api from "../utils/api";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
