@@ -73,10 +73,10 @@ function App() {
   const handleDeleteItem = (item) => {
     console.log(item);
     api
-      .deleteItem(item._id)
+      .deleteItem(item.id)
       .then(() => {
         const filteredCards = clothingItems.filter(
-          (card) => card._id !== item._id
+          (card) => card.id !== item.id
         );
         console.log(filteredCards);
         setClothingItems(filteredCards);
