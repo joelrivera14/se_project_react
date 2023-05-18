@@ -51,3 +51,13 @@ export const weatherOptions = [
 
 export const baseUrl =
   "https://my-json-server.typicode.com/joelrivera14/se_project_react";
+
+export const latitude = 44.34;
+export const longitude = 10.99;
+export const APIkey = "d4068566f6b20e7786c16bddf5f1ad55";
+export function checkResponse(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error${res.status}`);
+}

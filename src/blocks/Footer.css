@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  font-family: "FamiljenGrotesk-Medium";
+  font-family: "FamiljenGrotesk-Medium", Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
 }

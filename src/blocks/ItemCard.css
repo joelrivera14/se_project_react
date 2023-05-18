@@ -1,6 +1,6 @@
 .card_section {
   margin: 40px 0 0 0;
-  font-family: "FamiljenGrotesk-Bold";
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -30,6 +30,7 @@
   width: 328px;
   border-radius: 10px;
   border: 0.1px solid black;
+  cursor: pointer;
 }
 .card {
   display: flex;

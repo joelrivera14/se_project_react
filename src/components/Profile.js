@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
 import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
-import "../blocks/cards.css";
+import "../blocks/ItemCards.css";
 
 export function Profile({ items, onSelectCard }) {
   console.log(items);

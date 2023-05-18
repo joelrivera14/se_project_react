@@ -4,7 +4,7 @@ import addgarmentdisabled from "../images/addgarmentdisabled.svg";
 
 const ModalWithForm = ({
   children,
-  buttonText = "add garment",
+  buttonText,
   title,
   onClick,
   name,

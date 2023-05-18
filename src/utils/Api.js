@@ -1,11 +1,4 @@
-import { baseUrl } from "./Constants";
-
-function checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error${res.status}`);
-}
+import { baseUrl, checkResponse } from "./Constants";
 
 export const getItems = () => {
   return fetch(`${baseUrl}/items`, {

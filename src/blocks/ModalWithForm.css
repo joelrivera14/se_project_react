@@ -83,6 +83,19 @@
   background: none;
   border: none;
   cursor: pointer;
+  height: 35px;
+  width: 124px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.modal__button-submit:hover {
+  opacity: 0.5;
 }
 
 .modal__close-button {
