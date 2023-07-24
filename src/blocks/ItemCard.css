@@ -15,9 +15,6 @@
 }
 
 .card_name {
-  text-align: center;
-  position: relative;
-  top: 58px;
   background-color: #ffffff;
   max-width: 200px;
   border-radius: 5px;
@@ -37,4 +34,17 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.card__likebutton {
+  cursor: pointer;
+}
+
+.card__holder {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  gap: 10px;
 }

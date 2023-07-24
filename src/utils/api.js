@@ -10,25 +10,27 @@ export const getItems = () => {
   }).then(checkResponse);
 };
 
-export const addItem = ({ name, weather, link }) => {
+export const addItem = ({ name, weather, imageURL }, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name,
       weather,
-      link,
+      imageURL,
     }),
   }).then(checkResponse);
 };
 
-export const deleteItem = (id) => {
+export const deleteItem = (id, token) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };

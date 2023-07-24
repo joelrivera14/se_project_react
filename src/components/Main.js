@@ -4,15 +4,15 @@ import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { temperature } from "../utils/weatherApi";
 
-function Main({ weatherTemp, onSelectCard, clothingItems }) {
+function Main({ weatherTemp, onSelectCard, clothingItems, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   const getWeatherType = () => {
-    if (weatherTemp >= 86) {
+    if (weatherTemp >= 86.0) {
       return "hot";
-    } else if (weatherTemp >= 66 && weatherTemp <= 85) {
+    } else if (weatherTemp >= 66.0 && weatherTemp <= 85.0) {
       return "warm";
-    } else if (weatherTemp <= 65) {
+    } else if (weatherTemp <= 65.0) {
       return "cold";
     }
   };
@@ -22,7 +22,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const currentTempString = currentTemp[currentTemperatureUnit];
 
   const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
+    return item?.weather?.toLowerCase() === weatherType;
   });
 
   return (
@@ -32,7 +32,12 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
         Today is {currentTempString} / You may want to wear:
         <div className="card_items">
           {filteredCards.map((item) => (
-            <ItemCard key={item.id} item={item} onSelectCard={onSelectCard} />
+            <ItemCard
+              key={item.id}
+              item={item}
+              onSelectCard={onSelectCard}
+              onCardLike={onCardLike}
+            />
           ))}
         </div>
       </section>

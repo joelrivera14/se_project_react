@@ -10,10 +10,9 @@ const ModalWithForm = ({
   name,
   onSubmit,
 }) => {
-  console.log("ModalWithForm");
   return (
     <div className={`modal modal_type_${name}`}>
-      <div className="modal__content">
+      <div className="modal__content modal__content_edit">
         <button type="button" onClick={onClick} className="modal__close-button">
           <img src={closeButton} alt="close button" />
         </button>

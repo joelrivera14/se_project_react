@@ -4,19 +4,23 @@ import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
 import "../blocks/ItemCards.css";
 
-export function Profile({ items, onSelectCard }) {
-  console.log(items);
+export function Profile({ items, onSelectCard, isOpen, onCardLike, logOut }) {
   return (
     <div className="profile">
       <div className="profile__sidebar">
-        <SideBar />
+        <SideBar isOpen={isOpen} logOut={logOut} />
       </div>
       <div className="profile__clothes-section">
         <ClothesSection />
         <section className="cards">
           <ul className="cards__list">
             {items.map((card) => (
-              <ItemCard key={card.id} item={card} onSelectCard={onSelectCard} />
+              <ItemCard
+                key={card.id}
+                item={card}
+                onSelectCard={onSelectCard}
+                onCardLike={onCardLike}
+              />
             ))}
           </ul>
         </section>

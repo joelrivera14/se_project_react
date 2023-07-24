@@ -15,7 +15,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const weatherOption = weatherOptions.find(checkWeatherOption);
 
   const currentTemp = temperature(weatherTemp);
-  console.log(currentTemp);
+
   const currentTempString = currentTemp[currentTemperatureUnit];
 
   const imageSrcUrl = weatherOption.url || "";

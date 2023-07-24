@@ -49,6 +49,17 @@
   opacity: 0.5;
 }
 
+.header__button-login {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
 .header__name {
   padding: 0px 12px 0 0;
   cursor: pointer;

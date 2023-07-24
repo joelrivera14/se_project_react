@@ -4,8 +4,12 @@ import avatar from "../images/avatar.svg";
 import ToggleSwitch from "./ToggleSwitch";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
-const Header = ({ onCreateModal }) => {
-  console.log("Header");
+const Header = ({
+  onCreateModal,
+  onRegisterModal,
+  onLogInModal,
+  isLoggedIn,
+}) => {
   return (
     <header className="header">
       <div className="header__logo-container">
@@ -17,26 +21,49 @@ const Header = ({ onCreateModal }) => {
         <div className="header__date">June 15, New York</div>
       </div>
 
-      <div className="header__avatar-logo-container">
-        <ToggleSwitch />
-        <div className="header__button-holder">
+      {!isLoggedIn && (
+        <div className="header__avatar-logo-container">
+          <ToggleSwitch />
+          <div className="header__button-holder">
+            <button
+              className="header__button"
+              type="text"
+              onClick={onRegisterModal}
+            >
+              Sign Up
+            </button>
+          </div>
           <button
-            className="header__button"
+            className="header__button-login"
             type="text"
-            onClick={onCreateModal}
+            onClick={onLogInModal}
           >
-            + Add clothes
+            <div className="header__name">Log In</div>
           </button>
         </div>
-        <NavLink to="/profile" className="header__link">
-          <div className="header__name">Terrence Tegegne</div>
-        </NavLink>
-        <NavLink to="/profile">
-          <div className="header__avatar">
-            <img src={avatar} alt="avatar" />
+      )}
+      {isLoggedIn && (
+        <div className="header__avatar-logo-container">
+          <ToggleSwitch />
+          <div className="header__button-holder">
+            <button
+              className="header__button"
+              type="text"
+              onClick={onCreateModal}
+            >
+              + Add clothes
+            </button>
           </div>
-        </NavLink>
-      </div>
+          <NavLink to="/profile" className="header__link">
+            <div className="header__name">Terrence Tegegne</div>
+          </NavLink>
+          <NavLink to="/profile">
+            <div className="header__avatar">
+              <img src={avatar} alt="avatar" />
+            </div>
+          </NavLink>
+        </div>
+      )}
     </header>
   );
 };
