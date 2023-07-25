@@ -1,1 +1,2 @@
-This is REACT, the 11th project from Practicum where we set up a mock server to add and delete cards rendered within the website. The project was created with react and uses JSX to create the mockup of each page as well as routes to navigate from page to page.
+this is the 14th project of tripleTen. here we continue to use the framework react as well as incorporating backend code to be able to send api calls to our server. we use technologies such as express and mongodb.
+express link- https://github.com/joelrivera14/se_project_express
