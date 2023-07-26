@@ -11,11 +11,13 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(name, avatar);
-    editUser({ name, avatar });
+    const token = localStorage.getItem("jwt");
+    editUser({ name, avatar, token });
   }
 
   function handleAvatar(e) {
     setAvatar(e.target.value);
+    console.log(e.target.value);
   }
   function handleName(e) {
     setName(e.target.value);
@@ -46,7 +48,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             minLength="1"
             maxLength="3000"
             placeholder="Name"
-            value={currentUser.name}
+            initialValue={currentUser.name}
             onChange={handleName}
           />
         </label>
@@ -58,7 +60,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
-            value={currentUser.avatar}
+            initialValue={currentUser.avatar}
             onChange={handleAvatar}
           />
         </label>

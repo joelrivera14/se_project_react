@@ -32,6 +32,7 @@ export const checkToken = (token) => {
 };
 
 export const updateUser = ({ name, avatar, token }) => {
+  console.log(token);
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
