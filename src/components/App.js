@@ -121,9 +121,10 @@ function App() {
     signUp({ name, avatar, email, password })
       .then((res) => {
         console.log(res);
-        signIn(res).then((response) => {
-          console.log(response);
-        });
+        // signIn(res).then((response) => {
+        //   console.log(response);
+        // });
+        setActiveModal("");
       })
       .catch((data) => {
         console.log(data);
@@ -135,13 +136,11 @@ function App() {
       .then((data) => {
         console.log(data);
         localStorage.setItem("jwt", data.token);
-        // remove token
         checkToken(data.token).then((res) => {
           console.log(res);
           setIsLoggedIn(true);
-          // has to be false
           setCurrentUser(res.user);
-          // has to be an empty obj {}
+          getClothingItems();
         });
       })
       .catch((data) => {
@@ -152,6 +151,7 @@ function App() {
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
+    setClothingItems([]);
   };
 
   const handleUpdatedUser = ({ name, avatar, token }) => {
@@ -230,6 +230,7 @@ function App() {
                 items={clothingItems}
                 onSelectCard={handleSelectedCard}
                 isOpen={handleupdateModal}
+                addOpen={handleCreateModal}
                 onCardLike={handleLikeClick}
                 logOut={handleSignOut}
               />

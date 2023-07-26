@@ -3,6 +3,7 @@ import ItemCard from "./ItemCard";
 import { useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { temperature } from "../utils/weatherApi";
+import { weatherOptions } from "../utils/constants";
 
 function Main({ weatherTemp, onSelectCard, clothingItems, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -17,7 +18,6 @@ function Main({ weatherTemp, onSelectCard, clothingItems, onCardLike }) {
     }
   };
   const weatherType = getWeatherType();
-
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
 

@@ -33,10 +33,11 @@ const LogInModal = ({ isOpen, onClose, signIn }) => {
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="Log in"
       onClick={onClose}
       onSubmit={handleSubmit}
-      buttonText="Log In"
+      buttonText="Log in"
+      name="login"
     >
       <div className="modal__labels">
         <label className="modal__label">

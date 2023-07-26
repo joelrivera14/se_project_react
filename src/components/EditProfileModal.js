@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
-// import "../blocks/EditProfileModal.css";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { useContext } from "react";
 
 export default function EditProfileModal({ onClose, isOpen, editUser }) {
+  const currentUser = useContext(CurrentUserContext);
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
@@ -32,6 +34,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
       onClick={onClose}
       onSubmit={handleSubmit}
       buttonText="Save changes"
+      name="edit"
     >
       <div className="modal__labels">
         <label className="modal__label">
@@ -43,7 +46,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             minLength="1"
             maxLength="3000"
             placeholder="Name"
-            value={name}
+            value={currentUser.name}
             onChange={handleName}
           />
         </label>
@@ -55,6 +58,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
+            value={currentUser.avatar}
             onChange={handleAvatar}
           />
         </label>

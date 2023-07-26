@@ -1,6 +1,5 @@
 import "../blocks/ModalWithForm.css";
 import closeButton from "../images/closeButton.svg";
-import addgarmentdisabled from "../images/addgarmentdisabled.svg";
 
 const ModalWithForm = ({
   children,
@@ -11,8 +10,8 @@ const ModalWithForm = ({
   onSubmit,
 }) => {
   return (
-    <div className={`modal modal_type_${name}`}>
-      <div className="modal__content modal__content_edit">
+    <div className="modal">
+      <div className={`modal__content modal_content_${name}`}>
         <button type="button" onClick={onClick} className="modal__close-button">
           <img src={closeButton} alt="close button" />
         </button>

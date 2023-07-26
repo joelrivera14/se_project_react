@@ -3,6 +3,8 @@ import logo from "../images/wtwrlogo.svg";
 import avatar from "../images/avatar.svg";
 import ToggleSwitch from "./ToggleSwitch";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { useContext } from "react";
 
 const Header = ({
   onCreateModal,
@@ -10,6 +12,8 @@ const Header = ({
   onLogInModal,
   isLoggedIn,
 }) => {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <header className="header">
       <div className="header__logo-container">
@@ -55,7 +59,9 @@ const Header = ({
             </button>
           </div>
           <NavLink to="/profile" className="header__link">
-            <div className="header__name">Terrence Tegegne</div>
+            <div className="header__name">
+              {currentUser?.name || "not Logged In"}
+            </div>
           </NavLink>
           <NavLink to="/profile">
             <div className="header__avatar">

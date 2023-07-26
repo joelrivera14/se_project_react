@@ -8,4 +8,5 @@
 .clothes__button {
   border: none;
   background: none;
+  cursor: pointer;
 }
