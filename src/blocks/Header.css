@@ -69,9 +69,14 @@
   opacity: 0.5;
 }
 
-.header__avatar {
+.header__avatar_container {
   padding: 6px 0 0 0;
   cursor: pointer;
+}
+
+.header__avatar {
+  height: 40px;
+  width: 40px;
 }
 
 .header__avatar:hover {

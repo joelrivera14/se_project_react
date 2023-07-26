@@ -64,8 +64,12 @@ const Header = ({
             </div>
           </NavLink>
           <NavLink to="/profile">
-            <div className="header__avatar">
-              <img src={avatar} alt="avatar" />
+            <div className="header__avatar_container">
+              <img
+                src={currentUser.avatar}
+                className="header__avatar"
+                alt="avatar"
+              />
             </div>
           </NavLink>
         </div>
