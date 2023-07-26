@@ -25,10 +25,10 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
 
   useEffect(() => {
     if (isOpen) {
-      setName("");
-      setAvatar("");
+      setName(currentUser.name);
+      setAvatar(currentUser.avatar);
     }
-  }, [isOpen]);
+  }, [currentUser.name, currentUser.avatar, isOpen]);
 
   return (
     <ModalWithForm
@@ -48,7 +48,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             minLength="1"
             maxLength="3000"
             placeholder="Name"
-            initialValue={currentUser.name}
+            defaultValue={currentUser.name}
             onChange={handleName}
           />
         </label>
@@ -60,7 +60,7 @@ export default function EditProfileModal({ onClose, isOpen, editUser }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
-            initialValue={currentUser.avatar}
+            defaultValue={currentUser.avatar}
             onChange={handleAvatar}
           />
         </label>

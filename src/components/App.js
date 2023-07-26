@@ -103,11 +103,12 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
+    const token = localStorage.getItem("jwt");
     api
-      .deleteItem(item.id)
+      .deleteItem(item._id, token)
       .then(() => {
         const filteredCards = clothingItems.filter(
-          (card) => card.id !== item.id
+          (card) => card._id !== item._id
         );
         console.log(filteredCards);
         setClothingItems(filteredCards);
