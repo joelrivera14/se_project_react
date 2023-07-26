@@ -32,6 +32,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -198,9 +199,11 @@ function App() {
         })
         .catch((error) => {
           console.log({ error });
-        });
+        })
+        .finally(() => setIsLoading(false));
     } else {
       setIsLoggedIn(false);
+      setIsLoading(false);
     }
   }, [setIsLoggedIn, setCurrentUser]);
 
@@ -225,7 +228,11 @@ function App() {
                 onCardLike={handleLikeClick}
               />
             </Route>
-            <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
+            <ProtectedRoute
+              path="/profile"
+              isLoggedIn={isLoggedIn}
+              isLoading={isLoading}
+            >
               <Profile
                 items={clothingItems}
                 onSelectCard={handleSelectedCard}
