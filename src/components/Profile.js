@@ -23,7 +23,7 @@ export function Profile({
           <ul className="cards__list">
             {items.map((card) => (
               <ItemCard
-                key={card.id}
+                key={card._id}
                 item={card}
                 onSelectCard={onSelectCard}
                 onCardLike={onCardLike}

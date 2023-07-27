@@ -115,7 +115,6 @@ function App() {
         const filteredCards = clothingItems.filter(
           (card) => card._id !== item._id
         );
-        console.log(filteredCards);
         setClothingItems(filteredCards);
         handleCloseModal();
       })
@@ -275,6 +274,7 @@ function App() {
                 onClose={handleCloseModal}
                 isOpen={handleRegisterModal}
                 signUp={handleSignUp}
+                openLoginModal={handleLogInModal}
               />
             )}
             {activeModal === "login" && (
@@ -282,6 +282,7 @@ function App() {
                 onClose={handleCloseModal}
                 isOpen={handleLogInModal}
                 signIn={handleSignIn}
+                openRegisterModal={handleRegisterModal}
               />
             )}
           </CurrentTemperatureUnitContext.Provider>

@@ -1,7 +1,7 @@
 import ModalWithForm from "./ModalWithForm";
 import { useState, useEffect } from "react";
 
-const LogInModal = ({ isOpen, onClose, signIn }) => {
+const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -38,6 +38,14 @@ const LogInModal = ({ isOpen, onClose, signIn }) => {
       onSubmit={handleSubmit}
       buttonText="Log in"
       name="login"
+      text={
+        <span className="modal__span">
+          or
+          <button onClick={openRegisterModal} className="modal__other_button">
+            Register
+          </button>
+        </span>
+      }
     >
       <div className="modal__labels">
         <label className="modal__label">
