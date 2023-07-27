@@ -10,7 +10,7 @@ export const getItems = () => {
   }).then(checkResponse);
 };
 
-export const addItem = ({ name, weather, imageURL }, token) => {
+export const addItem = ({ name, weather, imageUrl }, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -20,7 +20,7 @@ export const addItem = ({ name, weather, imageURL }, token) => {
     body: JSON.stringify({
       name,
       weather,
-      imageURL,
+      imageUrl,
     }),
   }).then(checkResponse);
 };

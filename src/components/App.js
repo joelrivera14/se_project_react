@@ -75,13 +75,13 @@ function App() {
     });
   };
 
-  const handleAddItem = ({ name, imageURL, weatherType }) => {
+  const handleAddItem = ({ name, imageUrl, weatherType }) => {
     const token = localStorage.getItem("jwt");
     api
       .addItem(
         {
           name,
-          imageURL,
+          imageUrl,
           weather: weatherType,
         },
         token
@@ -97,9 +97,14 @@ function App() {
   };
 
   const getClothingItems = () => {
-    api.getItems().then((res) => {
-      setClothingItems(res);
-    });
+    api
+      .getItems()
+      .then((res) => {
+        setClothingItems(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleDeleteItem = (item) => {
@@ -158,8 +163,8 @@ function App() {
 
   const handleUpdatedUser = ({ name, avatar, token }) => {
     updateUser({ name, avatar, token })
-      .then((data) => {
-        console.log(data);
+      .then(({ data }) => {
+        setCurrentUser(data.user);
         handleCloseModal();
       })
       .catch((e) => console.log(e));

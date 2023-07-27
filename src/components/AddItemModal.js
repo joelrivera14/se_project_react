@@ -3,13 +3,13 @@ import ModalWithForm from "./ModalWithForm";
 
 export default function AddItemModal({ onClose, isOpen, onAddItem }) {
   const [name, setName] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [weatherType, setWeatherType] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(name, imageURL, weatherType);
-    onAddItem({ name, imageURL, weatherType });
+    console.log(name, imageUrl, weatherType);
+    onAddItem({ name, imageUrl, weatherType });
   }
 
   function handleWeatherType(e) {
@@ -17,13 +17,13 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
   }
 
   function handleImageURL(e) {
-    setImageURL(e.target.value);
+    setImageUrl(e.target.value);
   }
 
   useEffect(() => {
     if (isOpen) {
       setName("");
-      setImageURL("");
+      setImageUrl("");
       setWeatherType("");
     }
   }, [isOpen]);
