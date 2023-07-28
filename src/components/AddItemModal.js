@@ -59,6 +59,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="link"
             minLength="1"
             placeholder="Image Url"
+            value={imageUrl}
             onChange={handleImageURL}
           />
         </label>

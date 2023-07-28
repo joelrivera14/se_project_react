@@ -130,7 +130,7 @@ function App() {
         // signIn(res).then((response) => {
         //   console.log(response);
         // });
-        setActiveModal("");
+        handleCloseModal();
       })
       .catch((data) => {
         console.log(data);
@@ -147,6 +147,7 @@ function App() {
           setIsLoggedIn(true);
           setCurrentUser(res.user);
           getClothingItems();
+          handleCloseModal();
         });
       })
       .catch((data) => {
@@ -192,6 +193,8 @@ function App() {
           .catch((err) => console.log(err));
   };
 
+  const handleToken = () => {};
+
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
@@ -213,82 +216,80 @@ function App() {
   }, [setIsLoggedIn, setCurrentUser]);
 
   return (
-    <div>
-      <BrowserRouter>
-        <CurrentUserContext.Provider value={currentUser}>
-          <CurrentTemperatureUnitContext.Provider
-            value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-          >
-            <Header
-              onCreateModal={handleCreateModal}
-              onRegisterModal={handleRegisterModal}
-              onLogInModal={handleLogInModal}
-              isLoggedIn={isLoggedIn}
+    <BrowserRouter>
+      <CurrentUserContext.Provider value={currentUser}>
+        <CurrentTemperatureUnitContext.Provider
+          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+        >
+          <Header
+            onCreateModal={handleCreateModal}
+            onRegisterModal={handleRegisterModal}
+            onLogInModal={handleLogInModal}
+            isLoggedIn={isLoggedIn}
+          />
+          <Route exact path="/">
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+              onCardLike={handleLikeClick}
             />
-            <Route exact path="/">
-              <Main
-                weatherTemp={temp}
-                onSelectCard={handleSelectedCard}
-                clothingItems={clothingItems}
-                onCardLike={handleLikeClick}
-              />
-            </Route>
-            <ProtectedRoute
-              path="/profile"
-              isLoggedIn={isLoggedIn}
-              isLoading={isLoading}
-            >
-              <Profile
-                items={clothingItems}
-                onSelectCard={handleSelectedCard}
+          </Route>
+          <ProtectedRoute
+            path="/profile"
+            isLoggedIn={isLoggedIn}
+            isLoading={isLoading}
+          >
+            <Profile
+              items={clothingItems}
+              onSelectCard={handleSelectedCard}
+              isOpen={handleupdateModal}
+              addOpen={handleCreateModal}
+              onCardLike={handleLikeClick}
+              logOut={handleSignOut}
+            />
+            {activeModal === "update" && (
+              <EditProfileModal
+                onClose={handleCloseModal}
                 isOpen={handleupdateModal}
-                addOpen={handleCreateModal}
-                onCardLike={handleLikeClick}
-                logOut={handleSignOut}
-              />
-              {activeModal === "update" && (
-                <EditProfileModal
-                  onClose={handleCloseModal}
-                  isOpen={handleupdateModal}
-                  editUser={handleUpdatedUser}
-                ></EditProfileModal>
-              )}
-            </ProtectedRoute>
-            <Footer />
-            {activeModal === "preview" && (
-              <ItemModal
-                selectedCard={selectedCard}
-                onClose={handleCloseModal}
-                onDelete={handleDeleteItem}
-              />
+                editUser={handleUpdatedUser}
+              ></EditProfileModal>
             )}
-            {activeModal === "create" && (
-              <AddItemModal
-                onClose={handleCloseModal}
-                isOpen={handleCreateModal}
-                onAddItem={handleAddItem}
-              />
-            )}
-            {activeModal === "register" && (
-              <RegisterModal
-                onClose={handleCloseModal}
-                isOpen={handleRegisterModal}
-                signUp={handleSignUp}
-                openLoginModal={handleLogInModal}
-              />
-            )}
-            {activeModal === "login" && (
-              <LogInModal
-                onClose={handleCloseModal}
-                isOpen={handleLogInModal}
-                signIn={handleSignIn}
-                openRegisterModal={handleRegisterModal}
-              />
-            )}
-          </CurrentTemperatureUnitContext.Provider>
-        </CurrentUserContext.Provider>
-      </BrowserRouter>
-    </div>
+          </ProtectedRoute>
+          <Footer />
+          {activeModal === "preview" && (
+            <ItemModal
+              selectedCard={selectedCard}
+              onClose={handleCloseModal}
+              onDelete={handleDeleteItem}
+            />
+          )}
+          {activeModal === "create" && (
+            <AddItemModal
+              onClose={handleCloseModal}
+              isOpen={handleCreateModal}
+              onAddItem={handleAddItem}
+            />
+          )}
+          {activeModal === "register" && (
+            <RegisterModal
+              onClose={handleCloseModal}
+              isOpen={handleRegisterModal}
+              signUp={handleSignUp}
+              openLoginModal={handleLogInModal}
+            />
+          )}
+          {activeModal === "login" && (
+            <LogInModal
+              onClose={handleCloseModal}
+              isOpen={handleLogInModal}
+              signIn={handleSignIn}
+              openRegisterModal={handleRegisterModal}
+            />
+          )}
+        </CurrentTemperatureUnitContext.Provider>
+      </CurrentUserContext.Provider>
+    </BrowserRouter>
   );
 }
 

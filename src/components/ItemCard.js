@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import likeButton from "../images/likebutton.svg";
+import likedButton from "../images/likedbutton.svg";
 
 const ItemCard = ({ item, onSelectCard, onCardLike }) => {
   const context = useContext(CurrentUserContext);
@@ -13,7 +15,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike }) => {
         src={item.imageUrl}
         className="card_image"
         onClick={() => onSelectCard(item)}
-        alt="card"
+        alt={item.name}
       />
       <div className="card__holder">
         <div className="card_name">{item.name}</div>

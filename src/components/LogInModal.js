@@ -13,7 +13,6 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
     };
     signIn(user);
     console.log(user);
-    onClose();
   }
 
   function emailChange(e) {
@@ -56,6 +55,7 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
             name="link"
             minLength="1"
             placeholder="Email"
+            value={email}
             onChange={emailChange}
           />
         </label>
@@ -67,6 +67,7 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
             name="link"
             minLength="1"
             placeholder="Password"
+            value={password}
             onChange={passwordChange}
           />
         </label>

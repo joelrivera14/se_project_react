@@ -68,6 +68,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             name="link"
             minLength="1"
             placeholder="Email"
+            value={email}
             onChange={emailChange}
           />
         </label>
@@ -79,6 +80,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             name="link"
             minLength="1"
             placeholder="Password"
+            value={password}
             onChange={passwordChange}
           />
         </label>
@@ -104,6 +106,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             name="link"
             minLength="1"
             placeholder="Avatar URL"
+            value={avatar}
             onChange={avatarChange}
           />
         </label>

@@ -1,6 +1,5 @@
 import "../blocks/Header.css";
 import logo from "../images/wtwrlogo.svg";
-import avatar from "../images/avatar.svg";
 import ToggleSwitch from "./ToggleSwitch";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import CurrentUserContext from "../contexts/CurrentUserContext";
