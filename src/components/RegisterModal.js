@@ -19,21 +19,21 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
     console.log(user);
   }
 
-  function nameChange(e) {
-    setName(e.target.value);
-  }
+  // function nameChange(e) {
+  //   setName(e.target.value);
+  // }
 
-  function emailChange(e) {
-    setEmail(e.target.value);
-  }
+  //  function emailChange(e) {
+  //     setEmail(e.target.value);
+  //   }
 
-  function passwordChange(e) {
-    setPassword(e.target.value);
-  }
+  // function passwordChange(e) {
+  //   setPassword(e.target.value);
+  // }
 
-  function avatarChange(e) {
-    setAvatar(e.target.value);
-  }
+  // function avatarChange(e) {
+  //   setAvatar(e.target.value);
+  // }
 
   useEffect(() => {
     if (isOpen) {
@@ -69,7 +69,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             minLength="1"
             placeholder="Email"
             value={email}
-            onChange={emailChange}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label className="modal__label">
@@ -81,7 +81,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             minLength="1"
             placeholder="Password"
             value={password}
-            onChange={passwordChange}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <label className="modal__label">
@@ -94,7 +94,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             maxLength="3000"
             placeholder="Name"
             value={name}
-            onChange={nameChange}
+            onChange={(e) => setName(e.target.value)}
           />
         </label>
 
@@ -107,7 +107,7 @@ const RegisterModal = ({ isOpen, onClose, signUp, openLoginModal }) => {
             minLength="1"
             placeholder="Avatar URL"
             value={avatar}
-            onChange={avatarChange}
+            onChange={(e) => setAvatar(e.target.value)}
           />
         </label>
       </div>

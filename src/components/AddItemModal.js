@@ -12,13 +12,13 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
     onAddItem({ name, imageUrl, weatherType });
   }
 
-  function handleWeatherType(e) {
-    setWeatherType(e.target.value);
-  }
+  // function handleWeatherType(e) {
+  //   setWeatherType(e.target.value);
+  // }
 
-  function handleImageURL(e) {
-    setImageUrl(e.target.value);
-  }
+  // function handleImageURL(e) {
+  //   setImageUrl(e.target.value);
+  // }
 
   useEffect(() => {
     if (isOpen) {
@@ -60,7 +60,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             minLength="1"
             placeholder="Image Url"
             value={imageUrl}
-            onChange={handleImageURL}
+            onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
       </div>
@@ -73,7 +73,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="button"
             id="hot"
             value="hot"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Hot</label>
         </div>
@@ -84,7 +84,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="button"
             id="warm"
             value="warm"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Warm</label>
         </div>
@@ -95,7 +95,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
             name="button"
             id="cold"
             value="cold"
-            onChange={handleWeatherType}
+            onChange={(e) => setWeatherType(e.target.value)}
           />
           <label>Cold</label>
         </div>

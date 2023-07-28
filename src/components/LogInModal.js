@@ -15,13 +15,13 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
     console.log(user);
   }
 
-  function emailChange(e) {
-    setEmail(e.target.value);
-  }
+  // function emailChange(e) {
+  //   setEmail(e.target.value);
+  // }
 
-  function passwordChange(e) {
-    setPassword(e.target.value);
-  }
+  // function passwordChange(e) {
+  //   setPassword(e.target.value);
+  // }
 
   useEffect(() => {
     if (isOpen) {
@@ -56,7 +56,7 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
             minLength="1"
             placeholder="Email"
             value={email}
-            onChange={emailChange}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label className="modal__label">
@@ -68,7 +68,7 @@ const LogInModal = ({ isOpen, onClose, signIn, openRegisterModal }) => {
             minLength="1"
             placeholder="Password"
             value={password}
-            onChange={passwordChange}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
       </div>
