@@ -1,15 +1,17 @@
 .sidebar {
   display: flex;
   flex-flow: row;
-  align-self: flex-start;
   flex-wrap: nowrap;
   max-width: 100%;
+  align-items: center;
+  gap: 16px;
+  padding: 47px 0px 0px 40px;
 }
 .sidebar__avatar {
   width: 56px;
   height: 56px;
-  padding: 47px 16px 0 40px;
-  align-self: center;
+  margin: 0;
+  border-radius: 100px;
 }
 
 .sidebar__name {
@@ -17,8 +19,7 @@
   font-weight: 700px;
   font-size: 20px;
   margin: 0;
-  padding: 47px 0 0 0;
-  align-self: center;
+
   max-width: 150px;
   white-space: nowrap;
 }

@@ -77,6 +77,7 @@
 .header__avatar {
   height: 40px;
   width: 40px;
+  border-radius: 100px;
 }
 
 .header__avatar:hover {
