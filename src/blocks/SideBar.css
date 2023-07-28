@@ -13,6 +13,8 @@
 }
 
 .sidebar__name {
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700px;
   font-size: 20px;
   margin: 0;
   padding: 47px 0 0 0;
@@ -31,12 +33,18 @@
 }
 
 .sidebar__user {
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700px;
+  font-size: 20px;
   border: none;
   background: none;
   cursor: pointer;
 }
 
 .sidebar__logout {
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700px;
+  font-size: 20px;
   border: none;
   background: none;
   cursor: pointer;

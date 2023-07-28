@@ -160,8 +160,14 @@
   background: none;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700px;
+  font-size: 20px;
 }
 
 .modal__span {
   color: rgba(0, 0, 0, 0.5);
+  font-family: "FamiljenGrotesk-Bold", Arial, sans-serif;
+  font-weight: 700px;
+  font-size: 20px;
 }
