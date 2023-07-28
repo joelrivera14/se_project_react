@@ -4,7 +4,7 @@ import Main from "./Main";
 import { Profile } from "./Profile";
 import Footer from "./Footer";
 import ItemModal from "./ItemModal";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -142,13 +142,7 @@ function App() {
       .then((data) => {
         console.log(data);
         localStorage.setItem("jwt", data.token);
-        checkToken(data.token).then((res) => {
-          console.log(res);
-          setIsLoggedIn(true);
-          setCurrentUser(res.user);
-          getClothingItems();
-          handleCloseModal();
-        });
+        handleToken(data.token);
       })
       .catch((data) => {
         console.log(data);
@@ -193,26 +187,19 @@ function App() {
           .catch((err) => console.log(err));
   };
 
-  // const handleToken = () => {
-  //   checkToken(data.token).then((res) => {
-  //     console.log(res);
-  //     setIsLoggedIn(true);
-  //     setCurrentUser(res.user);
-  //     getClothingItems();
-  //     handleCloseModal();
-  //   });
-  // };
+  const handleToken = useCallback((token) => {
+    return checkToken(token).then((res) => {
+      setIsLoggedIn(true);
+      setCurrentUser(res.user);
+      getClothingItems();
+      handleCloseModal();
+    });
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      checkToken(token)
-        .then((res) => {
-          console.log(res);
-          setIsLoggedIn(true);
-          setCurrentUser(res.user);
-          getClothingItems();
-        })
+      handleToken(token)
         .catch((error) => {
           console.log({ error });
         })
@@ -221,7 +208,7 @@ function App() {
       setIsLoggedIn(false);
       setIsLoading(false);
     }
-  }, [setIsLoggedIn, setCurrentUser]);
+  }, [setIsLoggedIn, setCurrentUser, handleToken]);
 
   return (
     <BrowserRouter>
