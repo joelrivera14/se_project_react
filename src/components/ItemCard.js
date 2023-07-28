@@ -6,9 +6,7 @@ import likedButton from "../images/likedbutton.svg";
 const ItemCard = ({ item, onSelectCard, onCardLike }) => {
   const context = useContext(CurrentUserContext);
   const isLiked = item.likes?.some((like) => like === context._id);
-  const imageSrc = isLiked
-    ? require("../images/likedbutton.svg").default
-    : require("../images/likebutton.svg").default;
+  const imageSrc = isLiked ? likeButton : likedButton;
   return (
     <div className="card">
       <img

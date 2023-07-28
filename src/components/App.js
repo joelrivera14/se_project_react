@@ -193,7 +193,15 @@ function App() {
           .catch((err) => console.log(err));
   };
 
-  const handleToken = () => {};
+  // const handleToken = () => {
+  //   checkToken(data.token).then((res) => {
+  //     console.log(res);
+  //     setIsLoggedIn(true);
+  //     setCurrentUser(res.user);
+  //     getClothingItems();
+  //     handleCloseModal();
+  //   });
+  // };
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");

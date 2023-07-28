@@ -10,9 +10,9 @@ function Main({ weatherTemp, onSelectCard, clothingItems, onCardLike }) {
   const getWeatherType = () => {
     if (weatherTemp >= 86.0) {
       return "hot";
-    } else if (weatherTemp >= 66.0 && weatherTemp <= 85.0) {
+    } else if (weatherTemp >= 66.0) {
       return "warm";
-    } else if (weatherTemp <= 65.0) {
+    } else {
       return "cold";
     }
   };
