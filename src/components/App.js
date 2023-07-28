@@ -138,15 +138,11 @@ function App() {
   };
 
   const handleSignIn = ({ email, password }) => {
-    signIn({ email, password })
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem("jwt", data.token);
-        handleToken(data.token);
-      })
-      .catch((data) => {
-        console.log(data);
-      });
+    signIn({ email, password }).then((data) => {
+      console.log(data);
+      localStorage.setItem("jwt", data.token);
+      handleToken(data.token);
+    });
   };
 
   const handleSignOut = () => {
@@ -188,22 +184,22 @@ function App() {
   };
 
   const handleToken = useCallback((token) => {
-    return checkToken(token).then((res) => {
-      setIsLoggedIn(true);
-      setCurrentUser(res.user);
-      getClothingItems();
-      handleCloseModal();
-    });
+    return checkToken(token)
+      .then((res) => {
+        setIsLoggedIn(true);
+        setCurrentUser(res.user);
+        getClothingItems();
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      handleToken(token)
-        .catch((error) => {
-          console.log({ error });
-        })
-        .finally(() => setIsLoading(false));
+      handleToken(token).finally(() => setIsLoading(false));
     } else {
       setIsLoggedIn(false);
       setIsLoading(false);
