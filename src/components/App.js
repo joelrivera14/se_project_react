@@ -138,11 +138,13 @@ function App() {
   };
 
   const handleSignIn = ({ email, password }) => {
-    signIn({ email, password }).then((data) => {
-      console.log(data);
-      localStorage.setItem("jwt", data.token);
-      handleToken(data.token);
-    });
+    signIn({ email, password })
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("jwt", data.token);
+        handleToken(data.token);
+      })
+      .catch((e) => console.log(e));
   };
 
   const handleSignOut = () => {
