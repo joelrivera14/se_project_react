@@ -1,5 +1,7 @@
 {
   "name": "se_project_react",
+  "homepage": "www.weatherwear.chickenkiller.com",
+  "deploy": "npm run build && scp -r ./build/* jorivera114@www.weatherwear.chickenkiller.com:/home/tripletenuser/frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -37,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.3.3"
   }
 }
+
+

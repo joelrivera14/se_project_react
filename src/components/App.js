@@ -287,3 +287,6 @@ function App() {
 }
 
 export default App;
+
+// # Run this locally from the front-end folder
+// scp -r -i path/to/ssh/key ./build/* jorivera114@www.weatherwear.chickenkiller.com:/home/tripletenuser/frontend
