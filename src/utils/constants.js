@@ -51,7 +51,7 @@ export const weatherOptions = [
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "api.weatherwear.crabdance.com"
+    ? "https://api.weatherwear.crabdance.com"
     : "http://localhost:3001";
 // "http://localhost:3001";
 

@@ -20,7 +20,7 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "scp -r -i path/to/ssh/key ./build/* jorivera114@weatherwear.crabdance.com:/home/jorivera114/frontend"
   },
   "eslintConfig": {
     "extends": [
