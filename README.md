@@ -4,7 +4,7 @@ This is Practicums (now TripleTen) final project. It is meant to display differe
 
 # Functionality:
 
-I started this project simply just building out the layout with flexbox and making sure the web page were responsive. As I progressed, there was the addition of authorization and authentication so that the user is able to create their own account and upload their own clothing images, there was the addition of forms, a like/dislike feature, an image deletion feature and the use of RESTful API's
+I started this project simply just building out the layout with flexbox and making sure the web page was responsive. As I progressed, there was the addition of authorization and authentication so that the user is able to create their own account and upload their own clothing images, there was the addition of forms, a like/dislike feature, an image deletion feature and the use of RESTful API's
 
 # Technologies:
 
